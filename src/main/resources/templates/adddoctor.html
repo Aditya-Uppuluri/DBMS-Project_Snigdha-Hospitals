@@ -7,6 +7,16 @@
 </head>
 <body>
 
+    <nav class="navflex">
+        <div class="title"><a class="navitems" href="@{/}">Snighda</a></div>
+    
+        <div class="navi">
+            <a class="navitems" href="@{/doctors}">Doctors</a>
+            <a class="navitems" href="@{/patients}">Patients</a>
+            <a class="navitems" href="@{/appointments}">Appointments</a>
+        </div>
+    </nav>
+
     <div class="addform">
         <form th:action="@{/adddoctor}" th:object="${doctor}" method="POST">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 

@@ -3,25 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../static/style.css">
+
 </head>
 <body>
-    <h1>Patient Details</h1>
-    <br/>
+
+
+    <nav class="navflex">
+        <div class="title"><a class="navitems" href="@{/}">Snighda</a></div>
+    
+        <div class="navi">
+            <a class="navitems" href="@{/doctors}">Doctors</a>
+            <a class="navitems" href="@{/patients}">Patients</a>
+            <a class="navitems" href="@{/appointments}">Appointments</a>
+        </div>
+    </nav>
+
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">Name</th>
-        <th scope="col">DOB</th>
-        <th scope="col">Blood</th>
-        <th scope="col">Phone</th>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="patient : ${patients}">
-        <td th:text="${patient.patientName}"></td>
-        <td th:text="${patient.patientDob}"></td>
-        <td th:text="${patient.patientBlood}"></td>
-        <td th:text="${patient.patientPhone}"></td>
+        <th th:text="${patient.name}">1</th>
+        <th th:text="${patient.dob}">1</th>
+        <th th:text="${patient.blood}">1</th>
+        <th th:text="${patient.phone}">1</th>
     </tr>
     </tbody>
 </table>

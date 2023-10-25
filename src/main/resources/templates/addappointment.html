@@ -6,6 +6,16 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
+    <nav class="navflex">
+        <div class="title"><a class="navitems" href="@{/}">Snighda</a></div>
+    
+        <div class="navi">
+            <a class="navitems" href="@{/doctors}">Doctors</a>
+            <a class="navitems" href="@{/patients}">Patients</a>
+            <a class="navitems" href="@{/appointments}">Appointments</a>
+        </div>
+    </nav>
+
     <div class="addform">
     <form th:action="@{/addappointment}" th:object="${appointment}" method="POST">
         <div class="inputfield"><div>Appointment ID </div> <div><input type="number" name="aid"> </div> </div>
