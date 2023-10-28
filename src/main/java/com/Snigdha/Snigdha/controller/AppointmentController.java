@@ -34,4 +34,15 @@ public class AppointmentController {
         return "success";
     }
 
+    @RequestMapping(value = "/cancelappointment", method = RequestMethod.GET)
+    public String cancelAppointmentget(Model model) {
+        return "cancelappointment";
+    }
+
+    @RequestMapping(value = "/cancelappointment", method = RequestMethod.POST)
+    public String cancelAppointmentpost(Appointment appointment) {
+        appointmentRepository.cancelAppointment(appointment.getAppointmentId());
+        return "success";
+    }
+
 }

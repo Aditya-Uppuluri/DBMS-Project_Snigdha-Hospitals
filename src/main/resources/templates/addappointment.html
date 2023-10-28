@@ -6,32 +6,490 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
+
     <nav class="navflex">
-        <div class="title"><a class="navitems" href="@{/}">Snighda</a></div>
+        <div class="title"><a class="navitems" th:href="@{/}">Snighda</a></div>
     
         <div class="navi">
-            <a class="navitems" href="@{/doctors}">Doctors</a>
-            <a class="navitems" href="@{/patients}">Patients</a>
-            <a class="navitems" href="@{/appointments}">Appointments</a>
+            <a class="navitems" th:href="@{/doctors}">Doctors</a>
+            <a class="navitems" th:href="@{/patients}">Patients</a>
+            <a class="navitems" th:href="@{/appointments}">Appointments</a>
         </div>
     </nav>
 
     <div class="addform">
     <form th:action="@{/addappointment}" th:object="${appointment}" method="POST">
-        <div class="inputfield"><div>Appointment ID </div> <div><input type="number" name="aid"> </div> </div>
+        <div class="inputfield"><div>Appointment ID </div> <div><input type="number" name="appointmentId"> </div> </div>
         <br>
-        <div class="inputfield"><div>Patient ID </div> <div><input type="number" name="pid"/> </div> </div>
+        <div class="inputfield"><div>Patient ID </div> <div><input type="number" name="patientId"/> </div> </div>
         <br>
-        <div class="inputfield"><div>Doctor ID </div> <div><input type="number" name="did" /></div> </div>
+        <div class="inputfield"><div>Doctor ID </div> <div><input type="number" name="doctorId" /></div> </div>
         <br>
-        <div class="inputfield"><div>Illness </div><div><input type="text" name="illness"/> </div> </div>
+        <div class="inputfield"><div>Illness </div><div><input type="text" name="patientIllness"/> </div> </div>
         <br>
-        <div class="inputfield"><div>Date</div> <div><input type="date" name="date" /> </div> </div>
+        <div class="inputfield"><div>Date</div> <div><input type="date" name="dateOfAppointment" /> </div> </div>
         <br>
-        <div class="inputfield"><div>Mode </div><div><input type="text" name="mode" /> </div> </div>
+        <div class="inputfield"><div>Mode </div><div><input type="text" name="modeOfAppointment" /> </div> </div>
         <br>
         <div class="inputbuttondiv"><input class="inputbutton" type="submit" value="Add Appointment"></div>
     </form>
     </div>
 </body>
 </html>
+
+
+<style>
+    .navflex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(143, 255, 143);
+    padding: 10px;
+    height: 60px;
+    top: 0px;
+}
+
+.formadd{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.patienttitle{
+    display: flex;
+    justify-content: space-around;
+}
+
+.addpatientbutton{
+    color: white;
+    background-color: #028a2b;
+    height: 40px;
+    width: 100px;
+    margin: 20px;
+
+}
+
+.navi{
+    width: 800px;
+}
+.title{
+    font-size: larger;
+    text-decoration: none;
+    font-weight: 300;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: green;
+}
+
+
+.navitems{
+    text-decoration: none;
+    color: green;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+    margin: 10px;
+}
+
+footer{
+    bottom: 0px;
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    left: 40%;
+    margin: 10px;
+}
+
+.doctorss{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footerdiv{
+    background-color: rgb(143, 255, 143);
+
+}
+
+.doctor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.appprice{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.doctoritem{
+    background-color: rgb(221, 255, 221);
+    border: solid green;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+.carousel {
+    width: 100%;
+    margin-top: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+    height: 900px;
+    display: block;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgb(4, 4, 4);
+    font-size: 24px;
+    transform: translateY(700%);
+    z-index: 10;
+}
+
+.carousel-control-prev {
+    left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(0, 128, 0, 0.7);
+    margin: 5px;
+    cursor: pointer;
+}
+
+.carousel-indicators .active {
+    background-color: green;
+}
+
+.addform{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    border: solid;
+    padding: 30px;
+    border-color: #028a2b;
+}
+
+.navflex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(2, 66, 2);
+    color: #fff;
+    padding: 10px;
+    height: 40px;
+    top: 0px;
+}
+
+.navitems{
+    color: white;
+}
+
+.inputbutton{
+    background-color: #028a2b;
+    font-size: large;
+    color: white;
+    margin-left: 200px;
+}
+
+.inputbuttondiv{
+    justify-self: right;
+    justify-content: right;
+}
+
+.inputfield{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.carousel img {
+    transition-duration: 1s;
+    margin-bottom: 2%;
+}
+
+.pg_widget{
+    background: #fff;
+    box-shadow: 0px 0px 36px rgb(16 40 81 / 12%);
+    padding: 16px 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.col{
+    margin-left: 8%;
+    margin-bottom: 2%;
+}
+
+.hey{
+    margin-left: 5%;
+    margin-left: 2%;
+    width: 100%;
+}
+
+.tp_widget,.pg_widget{
+    text-decoration: none;
+    color: rgb(86, 184, 99);
+}
+
+.tp_widget:hover,.pg_widget:hover{
+    color: rgb(9, 110, 41);
+}
+
+.learn_more{
+    color:rgb(19, 99, 44)
+}
+
+.pt-1{
+    margin-bottom: 4%;
+}
+
+.nav-link{
+    color: rgb(9, 110, 41);
+}
+
+button{
+    color: rgb(9, 110, 41);
+}
+
+.get{
+    color: rgb(9, 110, 41);
+    margin-bottom: 4%;
+}
+
+.Content{
+    color: rgb(18, 50, 28);
+}
+
+body {
+    background-color: lightgreen;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+table,th, td {
+    border: 2px solid;
+}
+
+.table1{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.radio-inline {
+    margin: 0px 40px 20px 0px;
+    cursor: pointer;
+}
+
+label {
+    color: black;
+}
+
+#text {
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    color: black;
+}
+
+textarea#message {
+    outline: none;
+    border: none;
+    padding: 10px 0px 0px 15px;
+    font-size: 16px;
+    color: black;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.container {
+    background-color: rgb(13, 176, 64);
+    animation: scrollAnimation 20s linear infinite; /* Add the scrolling animation */
+}
+
+/* Define the keyframes for the scrolling animation */
+@keyframes scrollAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.imagesreddy{
+    height: 500px;
+    width: 100%;
+}
+
+
+.about{
+    margin: 10px;
+    padding: 10px;
+}
+
+.contactimage{
+    height: 600px;
+    width: 200px;
+    margin: 80px;
+}
+
+.contactall{
+    display: flex;
+    flex-direction: column;
+}
+
+.contactdetails{
+    margin-left: 600px;
+    margin-top: 100px;
+}
+
+.contactphone{
+    margin-bottom: 50px;
+}
+
+.box {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    float: left;
+    padding: 20px 20px 20px 20px;
+    width: 100%;
+    background: lightgreen;
+    border-radius: 10px;
+    border-color: black;
+    border-width: 100px;
+
+}
+
+
+.title {
+    width: 100%;
+    float: left;
+    line-height: 46px;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    border-radius: 4px;
+    padding: 2px 2px 2px 4px;
+    text-shadow:3px 3px 1px #028a2b;
+
+}
+
+.input,
+.button {
+    margin-top: 30px;
+    height: 70px;
+    width: 100%;
+    float: left;
+    position: relative;
+
+}
+
+.input {
+    height: 60px;
+    top: 10px;
+    border: none;
+    background: transparent;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 300;
+}
+
+.button button {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 300;
+}
+
+.input label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    line-height: 60px;
+}
+
+.pass-forgot {
+    width: 100%;
+    float: left;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 18px;
+}
+
+.click-efect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: lightgreen;
+    border-radius: 50%;
+}
+
+.materialContainer {
+    width: 100%;
+    max-width: 460px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+</style>

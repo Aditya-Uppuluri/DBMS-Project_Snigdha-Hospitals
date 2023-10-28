@@ -17,7 +17,7 @@ public class AppointmentRepository {
     JdbcTemplate jdbcTemplate;
 
     public void createAppointmentTable() {
-        String sql_query = "CREATE TABLE IF NOT EXISTS appointment (id int AUTO_INCREMENT,pid int,did int,illness varchar(30),doa date,mode char(7), PRIMARY KEY (id), FOREIGN KEY (pid) REFERENCES patient(id),FOREIGN KEY (did) REFERENCES doctor(id))";
+        String sql_query = "CREATE TABLE IF NOT EXISTS appointment (id int AUTO_INCREMENT,pid int,did int,illness varchar(30),doa date,mode char(7), PRIMARY KEY (id))";
         jdbcTemplate.update(sql_query);
     }
 

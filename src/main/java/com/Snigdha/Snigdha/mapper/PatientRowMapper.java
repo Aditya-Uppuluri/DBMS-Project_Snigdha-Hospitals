@@ -21,7 +21,7 @@ public class PatientRowMapper implements RowMapper<Patient> {
 
         patient.setPatientId(rs.getInt("id"));
         patient.setPatientName(rs.getString("patientname"));
-        patient.setPatientDob(rs.getDate("dob").toLocalDate());
+        patient.setPatientDob(rs.getDate("dob"));
         patient.setPatientBlood(rs.getString("blood"));
         patient.setPatientPhone(rs.getLong("phone"));
 

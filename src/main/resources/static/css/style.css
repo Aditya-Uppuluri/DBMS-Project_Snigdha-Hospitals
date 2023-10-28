@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/static/css/style.css}">
-    <title>Title</title>
-    
-</head>
-<body>
-
-    <nav class="navflex">
-        <div class="title"><a class="navitems" th:href="@{/}">Snighda</a></div>
-    
-        <div class="navi">
-            <a class="navitems" th:href="@{/doctors}">Doctors</a>
-            <a class="navitems" th:href="@{/patients}">Patients</a>
-            <a class="navitems" th:href="@{/appointments}">Appointments</a>
-        </div>
-    </nav>
-
-    <br><br><br><br>
-    Operation Carried out successfully !
-</body>
-</html>
-
-
-<style>
-    .navflex{
+.navflex{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -477,5 +450,3 @@ textarea#message {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
-
-</style>

@@ -1,6 +1,6 @@
 package com.Snigdha.Snigdha.models;
 
-import java.time.LocalDate;
+import java.time.java.sql.Date;
 
 public class Appointment {
 
@@ -36,11 +36,11 @@ public class Appointment {
         this.patientIllness = patientIllness;
     }
 
-    public LocalDate getDateOfAppointment() {
+    public java.sql.Date getDateOfAppointment() {
         return dateOfAppointment;
     }
 
-    public void setDateOfAppointment(LocalDate dateOfAppointment) {
+    public void setDateOfAppointment(java.sql.Date dateOfAppointment) {
         this.dateOfAppointment = dateOfAppointment;
     }
 
@@ -56,6 +56,6 @@ public class Appointment {
     private int patientId;
     private int doctorId;
     private String patientIllness;
-    private LocalDate dateOfAppointment;
+    private java.sql.Date dateOfAppointment;
     private String modeOfAppointment;
 }

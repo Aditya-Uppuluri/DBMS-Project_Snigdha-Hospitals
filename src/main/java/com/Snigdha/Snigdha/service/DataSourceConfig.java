@@ -13,7 +13,7 @@ public class DataSourceConfig {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/Snigdha");
         dataSource.setUsername("root");
-        dataSource.setPassword("MySQL_005");
+        dataSource.setPassword("Password123#");
         return dataSource;
     }
 }
