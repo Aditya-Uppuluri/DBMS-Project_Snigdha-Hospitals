@@ -34,16 +34,15 @@
             <!-- The form should start here -->
             <form th:action="@{/addgrievance}" method="POST">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-
+            
                 <h3 class="mt-4 text-center">How would you rate your overall experience on a scale of 1-10?</h3>
                 <div class="text-center">
                     <label for="experience">Enter a number between 1 and 10:</label>
                     <input type="number" id="experience" name="experience" min="1" max="10" required>
                 </div>
-
-
-                <h6 class="text-center">Please select cause(s) of grievance:</h6>
-                <div class="d-flex justify-content-center flex-wrap mt-3">
+            
+                <h6 class="text-center mt-3">Please select cause(s) of grievance:</h6>
+                <div class="d-flex justify-content-center flex-wrap">
                     <label class="checkbox-inline mr-3"><input type="checkbox" name="concerns" value="employee-related">Employees</label>
                     <label class="checkbox-inline mr-3"><input type="checkbox" name="concerns" value="location-related">Location</label>
                     <label class="checkbox-inline mr-3"><input type="checkbox" name="concerns" value="environment-related">Environment</label>
@@ -52,58 +51,53 @@
                     <label class="checkbox-inline mr-3"><input type="checkbox" name="concerns" value="appointment-related">Appointment</label>
                     <label class="checkbox-inline mr-3"><input type="checkbox" name="concerns" value="other">Other</label>
                 </div>
-
+            
                 <div class="row mt-3">
-                    <div class="col-md-2"></div>
-                    <label class="col-md-4">Full Name* <br>
-                        <input type="text" name="fullName" required placeholder="John Doe">
-                    </label>
-                    <br>
-
-                    <label class="col-md-4">Email* <br>
-                        <input type="text" name="email" required placeholder="xyz@gmail.com">
-                    </label>
-                    <br>
+                    <div class="col-md-6">
+                        <label>Full Name* <br>
+                            <input type="text" name="fullName" required placeholder="John Doe">
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Email* <br>
+                            <input type="text" name="email" required placeholder="xyz@gmail.com">
+                        </label>
+                    </div>
                 </div>
-
+            
                 <div class="row mt-3">
-                    <div class="col-md-2"></div>
-                    <label class="col-md-4">Patient_ID* <br>
-                        <input type="text" name="pid" required placeholder="Refer to your profile">
-                    </label>
-                    <br>
-
-                    <label class="col-md-4">Phone Number* <br>
-                        <input type="text" name="phoneNumber" required placeholder="9100052966">
-                    </label>
-                    <br>
+                    <div class="col-md-6">
+                        <label>Phone Number* <br>
+                            <input type="text" name="phoneNumber" required placeholder="9100052966">
+                        </label>
+                    </div>
                 </div>
-
+            
                 <div class="row mt-3">
-                    <div class="col-md-2"></div>
-                    <label class="col-md-4">Remarks <br>
-                        <textarea name="remarks" required placeholder="Please give a detailed feedback" cols="48" rows="5"></textarea>
-                    </label><br>
-                    
+                    <div class="col-md-12">
+                        <label>Remarks <br>
+                            <textarea name="remarks" required placeholder="Please give a detailed feedback" cols="48" rows="5"></textarea>
+                        </label>
+                    </div>
                 </div>
-
+            
                 <div class="row mt-3">
-                    <div class="col-md-2"></div>
-                    <button class="btn btn-primary" style="width: 53.5%;" type="submit">Submit</button>
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-primary" style="width: 50%;" type="submit">Submit</button>
+                    </div>
                 </div>
             </form>
-            <!-- The form ends here -->
-        </div>
-    </div>
-    <!-- Thank you message -->
-    <div class="row mt-5">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 text-center">
-            <p class="medium-text">
-                Thank you for filling out this form! We value your feedback and apologize for any inconvenience caused. Our team is committed to resolving your concerns and providing the best service possible. If you have any additional comments or questions, please don't hesitate to reach out to us. Thank you for choosing our hospital.
-            </p>
-        </div>
-    </div>
+            <!-- Form ends here -->
+            
+            <!-- Thank you message -->
+            <div class="row mt-5">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 text-center">
+                    <p class="medium-text">
+                        Thank you for filling out this form! We value your feedback and apologize for any inconvenience caused. Our team is committed to resolving your concerns and providing the best service possible. If you have any additional comments or questions, please don't hesitate to reach out to us. Thank you for choosing our hospital.
+                    </p>
+                </div>
+            </div>
 </div>
 </body>
 </html>

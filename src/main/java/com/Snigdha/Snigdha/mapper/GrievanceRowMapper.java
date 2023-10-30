@@ -26,7 +26,7 @@ public class GrievanceRowMapper implements RowMapper<Grievance> {
         
         grievance.setGrievance_Topic(concernList);
         grievance.setGrievance_Remarks(rs.getString("remarks"));
-        grievance.setGrievance_Pid(rs.getInt("pid"));
+        // grievance.setGrievance_Pid(rs.getInt("pid"));
     
         return grievance;
     
