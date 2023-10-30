@@ -17,7 +17,7 @@ public class GrievanceRepository {
     JdbcTemplate jdbcTemplate;
 
     public void createGrievanceTable(){
-        String sql_query = "CREATE TABLE IF NOT EXISTS grievance (grievance_id int AUTO_INCREMENT,grievance_ovrl int, grievance_topic varchar(45), grievance_remarks varchar(500), int,PRIMARY KEY(grievance_id))";
+        String sql_query = "CREATE TABLE IF NOT EXISTS grievance (grievance_id int AUTO_INCREMENT,grievance_ovrl int, grievance_topic varchar(45), grievance_remarks varchar(500), PRIMARY KEY(grievance_id))";
         jdbcTemplate.update(sql_query);
     }
 

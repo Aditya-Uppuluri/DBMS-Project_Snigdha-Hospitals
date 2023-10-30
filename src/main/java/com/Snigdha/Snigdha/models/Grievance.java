@@ -6,7 +6,8 @@ public class Grievance {
     private int grievanceId;
     private int grievance_ovrl;
     private List<String> grievanceTopics;  // Use a List to store multiple selected topics
-    private String grievanceRemarks;
+    private String grievance_remarks;
+    
     // private int grievance_pid;
 
     public int getGrievanceId() {
@@ -35,11 +36,11 @@ public class Grievance {
     }
 
     public String getGrievance_Remarks() {
-        return grievanceRemarks;
+        return grievance_remarks;
     }
 
-    public void setGrievance_Remarks(String grievanceRemarks) {
-        this.grievanceRemarks = grievanceRemarks;
+    public void setGrievance_Remarks(String grievance_remarks) {
+        this.grievance_remarks = grievance_remarks;
     }
 
     // public int getGrievance_Pid() {

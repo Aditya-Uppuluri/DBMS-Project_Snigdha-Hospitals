@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Snigdha Ayurvedic Hospital</title>
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #f2f2f2;
+            color: #4CAF50;
+        }
+
+        .container {
+            padding: 50px;
+        }
+
+        .footer {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a th:href="@{/home}">Home</a>
+    <a th:href="@{/doctors}">Doctors</a>
+    <a th:href="@{/patients}">Patients</a>
+    <a th:href="@{/appointments}">Appointments</a>
+    <a th:href="@{/grievances}">Grievance Portal</a>
+    <a th:href="@{/about}">About Us</a>
+</div>
+
+<div class="about-section">
+    <h1>About Snigdha Ayurvedic Hospital</h1>
+    <p>Snigdha Ayurvedic Hospital is committed to providing authentic Ayurvedic treatments, integrating traditional Ayurveda with modern medical technology. Our team of experienced Ayurvedic practitioners and modern medical professionals work together to offer holistic healthcare solutions.</p>
+</div>
+
+<div class="container">
+    <h2>Our Mission</h2>
+    <p>We aim to promote the ancient wisdom of Ayurveda for the well-being of our patients, emphasizing personalized care, natural healing, and a balanced lifestyle.</p>
+
+    <h2>Our Vision</h2>
+    <p>To become a leading center for Ayurvedic healthcare, renowned for its excellence in patient care, research, and education in the field of Ayurveda.</p>
+</div>
+
+<div class="footer">
+    <p>© Snigdha Ayurvedic Hospital 2023</p>
+</div>
+
+<script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
