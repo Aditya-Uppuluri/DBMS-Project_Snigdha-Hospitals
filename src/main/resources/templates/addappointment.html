@@ -20,8 +20,6 @@
 
     <div class="addform">
     <form th:action="@{/addappointment}" th:object="${appointment}" method="POST">
-        <div class="inputfield"><div>Appointment ID </div> <div><input type="number" name="appointmentId"> </div> </div>
-        <br>
         <div class="inputfield"><div>Patient ID </div> <div><input type="number" name="patientId"/> </div> </div>
         <br>
         <div class="inputfield"><div>Doctor ID </div> <div><input type="number" name="doctorId" /></div> </div>
