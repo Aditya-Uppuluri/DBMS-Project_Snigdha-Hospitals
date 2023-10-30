@@ -1,6 +1,7 @@
 package com.Snigdha.Snigdha.controller;
 
 import com.Snigdha.Snigdha.dao.PatientRepository;
+import com.Snigdha.Snigdha.models.Doctor;
 import com.Snigdha.Snigdha.models.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,4 +36,16 @@ public class PatientController {
         patientRepository.createPatient(patient);
         return "success";
     }
+
+    @RequestMapping(value = "/cancelpatient", method = RequestMethod.GET)
+    public String cancelPatientget(Model model) {
+        return "cancelpatient";
+    }
+
+    @RequestMapping(value = "/cancelpatient", method = RequestMethod.POST)
+    public String cancelPatientpost(Patient patient) {
+        patientRepository.cancelPatient(patient.getPatientId());
+        return "success";
+    }
 }
+

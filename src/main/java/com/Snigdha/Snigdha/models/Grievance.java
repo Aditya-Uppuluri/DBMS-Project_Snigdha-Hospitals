@@ -4,7 +4,7 @@ import java.util.List;
 public class Grievance {
 
     private int grievanceId;
-    private String grievance_ovrl;
+    private int grievance_ovrl;
     private List<String> grievanceTopics;  // Use a List to store multiple selected topics
     private String grievanceRemarks;
     private int grievancePid;
@@ -17,12 +17,13 @@ public class Grievance {
         this.grievanceId = grievanceId;
     }
 
-    public String getGrievance_Ovrl() {
+    public int getGrievance_Ovrl() {
         return grievance_ovrl;
     }
 
-    public void setGrievance_Ovrl(String grievance_ovrl) {
+    public void setGrievance_Ovrl(int grievance_ovrl) {
         this.grievance_ovrl = grievance_ovrl;
+
     }
 
     public List<String> getGrievance_Topic() {

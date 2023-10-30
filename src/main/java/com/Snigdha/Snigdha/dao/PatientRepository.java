@@ -37,10 +37,10 @@ public class PatientRepository {
                 patient.getPatientPhone());
     }
 
-    public void deletePatient(Patient patient) {
+    public void cancelPatient(int patientId) {
         String sql_query = "DELETE FROM patient WHERE id = ?";
         jdbcTemplate.update(sql_query,
-                patient.getPatientId());
+                patientId);
     }
 
 }

@@ -17,7 +17,7 @@ public class GrievanceRepository {
     JdbcTemplate jdbcTemplate;
 
     public void createGrievanceTable(){
-        String sql_query = "CREATE TABLE IF NOT EXISTS grievance (grievance_id int AUTO_INCREMENT,grievance_ovrl varchar(45),grievance_topic varchar(45),department varchar(20),grievance_remarks varchar(500),grievance_pid int,PRIMARY KEY(grievance_id))";
+        String sql_query = "CREATE TABLE IF NOT EXISTS grievance (grievance_id int AUTO_INCREMENT,grievance_ovrl int, grievance_topic varchar(45), grievance_remarks varchar(500),grievance_pid int,PRIMARY KEY(grievance_id))";
         jdbcTemplate.update(sql_query);
     }
 
@@ -28,13 +28,14 @@ public class GrievanceRepository {
 
 
 
-    public void createGrievance(Grievance grievance){
-        String sql_query = "INSERT INTO grievance (grievance_ovrl,grievance_topic,grievance_remarks,grievance_pid) VALUES (?,?,?,?)";
+    public void createGrievance(Grievance grievance) {
+        String sql_query = "INSERT INTO grievance (grievance_ovrl, grievance_topic, grievance_remarks, grievance_pid) VALUES (?,?,?,?)";
         jdbcTemplate.update(sql_query,
                 grievance.getGrievance_Ovrl(),
-                grievance.getGrievance_Topic(),
+                String.join(",", grievance.getGrievance_Topic()), // Convert list to comma-separated string
                 grievance.getGrievance_Remarks(),
                 grievance.getGrievance_Pid()
         );
     }
+    
 }

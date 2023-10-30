@@ -10,8 +10,8 @@ import com.Snigdha.Snigdha.models.Login;
 public class LoginRepository {
     
     public Boolean Authentication(Login userLogin){
-        System.out.println(userLogin.getUserName());        
-        System.out.println(userLogin.getPassWord());
+        // System.out.println(userLogin.getUserName());        
+        // System.out.println(userLogin.getPassWord());
 
         String username = "admin";
         String password = "admin";

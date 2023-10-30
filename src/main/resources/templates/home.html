@@ -13,13 +13,14 @@
 </head>
 <body>
     <nav class="navflex">
-      <div class="title"><a class="navitems" href="@{/}">Snighda</a></div>
-
-      <div class="navi">
-          <a class="navitems" href="/templates/doctor.html">Doctors</a>
-          <a class="navitems" href="/templates/patients.html">Patients</a>
-          <a class="navitems" href="/templates/appointments.html">Appointments</a>
-      </div>
+        <div class="title"><a class="navitems" th:href="@{/home}">Snighda</a></div>
+    
+        <div class="navi">
+            <a class="navitems" th:href="@{/doctors}">Doctors</a>
+            <a class="navitems" th:href="@{/patients}">Patients</a>
+            <a class="navitems" th:href="@{/appointments}">Appointments</a>
+            <a class="navitems" th:href="@{/grievances}">Grievance Portal</a>
+        </div>
     </nav>
 
       <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">

@@ -41,7 +41,7 @@ public class DoctorRepository {
                 doctor.getDoctorPhone());
     }
 
-    public void deleteDoctor(int doctorId) {
+    public void cancelDoctor(int doctorId) {
         String sql_query = "DELETE FROM doctor WHERE id = ?";
         jdbcTemplate.update(sql_query, doctorId);
     }

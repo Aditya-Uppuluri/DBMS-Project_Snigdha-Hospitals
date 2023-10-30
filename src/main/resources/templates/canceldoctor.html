@@ -1,8 +1,10 @@
+canceldoctor.html
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add Doctor</title>
+    <title>Delete Doctor</title>
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
@@ -18,24 +20,14 @@
         </div>
     </nav>
 
-    <div class="addform">
-        <form th:action="@{/adddoctor}" th:object="${doctor}" method="POST">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
-            <div class="inputfield"> <div>Name </div>       :     <div> <input type="text" name="doctorName"/> </div> </div>
-            <br>
-            <div class="inputfield"> <div>Qualification </div>  :  <div> <input type="text" name="doctorQualification" /> </div></div>
-            <br>
-            <div class="inputfield"> <div>Department </div>    :  <div> <input type="text" name="doctorDepartment" />  </div></div>
-            <br>
-            <div class="inputfield"> <div>Fees </div>       :     <div> <input type="number" name="doctorFees" /> </div></div>
-            <br>
-            <div class="inputfield"> <div>Phone </div>       :    <div> <input type="number" name="doctorPhone" /> </div></div>
-            <br>
-            <div class="inputbuttondiv"><input class="inputbutton" type="submit" value="Add Doctor"></div>
-        </form>
-    </div>
+<div class="addform">
+    <form th:action="@{/canceldoctor}" th:object="${doctor}" method="POST">
+        <div class="inputfield"><div>Doctor ID </div> <div><input type="number" name="doctorId"> </div> </div>
+        <br>
+        <div class="inputbuttondiv"><input class="inputbutton" type="submit" value="Delete Doctor"></div>
+    </form>
+</div>
 </body>
-
 </html>
 
 

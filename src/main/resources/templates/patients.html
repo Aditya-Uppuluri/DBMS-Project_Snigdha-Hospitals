@@ -8,12 +8,13 @@
 <body>
 
     <nav class="navflex">
-        <div class="title"><a class="navitems" th:href="@{/}">Snighda</a></div>
+        <div class="title"><a class="navitems" th:href="@{/home}">Snighda</a></div>
     
         <div class="navi">
             <a class="navitems" th:href="@{/doctors}">Doctors</a>
             <a class="navitems" th:href="@{/patients}">Patients</a>
             <a class="navitems" th:href="@{/appointments}">Appointments</a>
+            <a class="navitems" th:href="@{/grievances}">Grievance Portal</a>
         </div>
     </nav>
 
@@ -24,9 +25,8 @@
     </div>
 
     <div>
-    <a th:href="@{/addpatient}"><button class="addpatientbutton">Add Patient</button></a> 
-    </div>
-
+        <a th:href="@{/addpatient}"><button class="addpatientbutton">Add Patient</button></a>
+        <a th:href="@{/cancelpatient}"><button class="addpatientbutton">Remove Patient</button></a> 
     </div>
 
     <div class="table1">
