@@ -20,7 +20,6 @@
 
     <div class="addform">
 <form th:action="@{/addpatient}" th:object="${patient}" method="POST">
-    <!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />  -->
     <div class="inputfield"> <div>Name </div>        <div><input type="text" name="patientName"/>  </div> </div>
     <br>
     <div class="inputfield"> <div>DOB </div>         <div><input type="date" name="patientDob" /> </div> </div>
