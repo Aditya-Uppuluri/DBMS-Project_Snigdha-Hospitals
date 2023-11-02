@@ -1,5 +1,6 @@
 FROM openjdk:20-ea-4-jdk AS build
 COPY . .
+RUN apt-get update && apt-get install -y maven
 RUN mvn clean package
 
 FROM openjdk:20-jdk-slim
