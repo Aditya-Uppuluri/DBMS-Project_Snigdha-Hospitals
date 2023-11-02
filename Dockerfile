@@ -9,17 +9,31 @@
 #COPY --from=build /target/DBMS-Project_Snigdha-Hospitals-0.0.1-SNAPSHOT.jar DBMS-Project_Snigdha-Hospitals.jar
 #EXPOSE 8080
 #ENTRYPOINT ["java","-jar","DBMS-Project_Snigdha-Hospitals.jar"]
-
+#/////////////////
 # Use AdoptOpenJDK 21.0.1 for the build stage
-FROM adoptopenjdk:21-jdk-hotspot AS build
+#FROM adoptopenjdk:21-jdk-hotspot AS build
+#WORKDIR /app
+#COPY . .
+#RUN apt-get update && apt-get install -y maven
+#RUN mvn clean package
+#
+## Use AdoptOpenJDK 21.0.1 in the final image
+#FROM adoptopenjdk:21-jre-hotspot
+#WORKDIR /app
+#COPY --from=build /app/target/DBMS-Project_Snigdha-Hospitals-0.0.1-SNAPSHOT.jar DBMS-Project_Snigdha-Hospitals.jar
+#EXPOSE 8080
+#ENTRYPOINT ["java", "-jar", "DBMS-Project_Snigdha-Hospitals.jar"]
+#/////////////////
+# Use a base image with OpenJDK 17 and Maven
+FROM adoptopenjdk:17-jdk-hotspot AS build
 WORKDIR /app
 COPY . .
-RUN apt-get update && apt-get install -y maven
 RUN mvn clean package
 
-# Use AdoptOpenJDK 21.0.1 in the final image
-FROM adoptopenjdk:21-jre-hotspot
+# Use OpenJDK 17 in the final image
+FROM adoptopenjdk:17-jre-hotspot
 WORKDIR /app
 COPY --from=build /app/target/DBMS-Project_Snigdha-Hospitals-0.0.1-SNAPSHOT.jar DBMS-Project_Snigdha-Hospitals.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "DBMS-Project_Snigdha-Hospitals.jar"]
+
