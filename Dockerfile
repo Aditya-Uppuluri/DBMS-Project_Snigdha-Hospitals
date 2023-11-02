@@ -25,15 +25,12 @@
 #ENTRYPOINT ["java", "-jar", "DBMS-Project_Snigdha-Hospitals.jar"]
 #/////////////////
 # Use a base image with OpenJDK 17 and Maven
-FROM adoptopenjdk:17-jdk-hotspot AS build
-WORKDIR /app
+FROM maven:3.8.5-openjdk-17 as build
 COPY . .
 RUN mvn clean package
-
-# Use OpenJDK 17 in the final image
-FROM adoptopenjdk:17-jre-hotspot
-WORKDIR /app
-COPY --from=build /app/target/DBMS-Project_Snigdha-Hospitals-0.0.1-SNAPSHOT.jar DBMS-Project_Snigdha-Hospitals.jar
+FROM openjdk:17.0.1-jdk-slim
+COPY --from=build /target/DBMS-Project_Snigdha-Hospitals-0.0.1-SNAPSHOT.jar DBMS-Project_Snigdha-Hospitals.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "DBMS-Project_Snigdha-Hospitals.jar"]
+ENTRYPOINT ["java","-jar","DBMS-Project_Snigdha-Hospitals.jar"]
+
 
