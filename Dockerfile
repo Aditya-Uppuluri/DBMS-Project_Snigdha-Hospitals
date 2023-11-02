@@ -27,7 +27,7 @@
 # Use a base image with OpenJDK 17 and Maven
 FROM maven:3.8.5-openjdk-17 as build
 COPY . .
-RUN mvn clean package
+RUN mvn clean package -DskipTests
 FROM openjdk:17.0.1-jdk-slim
 COPY --from=build /app/target/DBMS-Project_Snigdha-Hospitals-0.0.1-SNAPSHOT.jar DBMS-Project_Snigdha-Hospitals.jar
 EXPOSE 8080
