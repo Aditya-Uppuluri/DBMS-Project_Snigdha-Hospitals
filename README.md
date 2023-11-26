@@ -1,2 +1,4 @@
 
-<!-- @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class }) -->
+* Thymeleaf
+* MySQL
+* JBDC
